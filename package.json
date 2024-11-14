@@ -13,6 +13,7 @@
     "format:check": "prettier --check './**/*.{js,jsx,ts,tsx,json,css,scss,md}'"
   },
   "dependencies": {
+    "@radix-ui/react-avatar": "^1.1.1",
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "18.16.1",
     "@types/react": "18.2.0",
@@ -25,6 +26,7 @@
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
     "lucide-react": "^0.456.0",
+    "mini-css-extract-plugin": "^2.9.2",
     "next": "13.4.1",
     "next-contentlayer": "^0.3.2",
     "next-themes": "^0.2.1",
