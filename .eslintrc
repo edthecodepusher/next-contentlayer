@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "plugin:prettier/recommended"  // Integrate Prettier with ESLint
+  ],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error", // Treat Prettier issues as errors
+    "no-console": "warn", // Example of a custom rule
+    "no-debugger": "warn" // Another custom rule
+  }
+}
