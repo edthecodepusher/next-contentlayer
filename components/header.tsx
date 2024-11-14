@@ -1,32 +1,48 @@
-import React from 'react'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-function Header() {
+import Image from 'next/image'
+
+export default function Header({
+  backgroundImage = '/images/background.png?height=400&width=1200',
+  avatarImage = '/images/avatar1.jpg?height=100&width=100',
+  title = 'edndacomputer.xyz',
+}: {
+  backgroundImage?: string
+  avatarImage?: string
+  title?: string
+}) {
   return (
-    <>
-      <div className="h-60 w-full">
-        <img
-          className="h-60 w-full object-cover opacity-40 blur-sm"
-          src="/images/background.png"
-          alt="Background"
-          style={{ objectFit: 'cover' }} // Ensures the image covers the area without stretching
+    <header className="relative h-[200px] w-full overflow-visible">
+      {/* Blurred background image */}
+      <div className="relative h-full w-full overflow-hidden">
+        <Image
+          src={backgroundImage}
+          alt=""
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
         />
+        <div className="absolute inset-0 bg-black/30 backdrop-blur-md" />
       </div>
 
-      <div className="relative -top-10 z-10 flex w-full justify-center">
-        <div className="absolute rounded-full bg-[#111111] p-1">
-          {/* ShadCN Avatar Component */}
-          <Avatar>
-            <AvatarImage
-              className="rounded-full" // To ensure it's round
-              src="/images/avatar1.jpg" // Avatar image source
-              alt="Avatar"
-            />
-            <AvatarFallback>AB</AvatarFallback> {/* Optional fallback text */}
-          </Avatar>
+      {/* Content overlay */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center">
+        <h1 className="px-4 text-center text-4xl font-bold text-neutral-100">
+          {title}
+        </h1>
+      </div>
+
+      {/* Avatar */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+        <div className="relative h-24 w-24 overflow-hidden rounded-full border-4 border-neutral-900 shadow-lg">
+          <Image
+            src={avatarImage}
+            alt="User avatar"
+            fill
+            className="object-cover"
+            sizes="96px"
+          />
         </div>
       </div>
-    </>
+    </header>
   )
 }
-
-export default Header
