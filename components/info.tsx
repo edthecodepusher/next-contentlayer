@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Globe, Phone, Mail, Wallet, Twitter, Youtube } from 'lucide-react'
+import { Globe, Phone, Mail, Wallet, X, Youtube } from 'lucide-react'
 
 export default function InfoCard() {
   const [copiedText, setCopiedText] = useState<string | null>(null)
@@ -20,11 +20,7 @@ export default function InfoCard() {
       label: 'ETH Address',
       value: '0x1234567890123456789012345678901234567890',
     },
-    {
-      icon: Twitter,
-      label: 'Twitter',
-      value: 'https://twitter.com/yourusername',
-    },
+    { icon: X, label: 'X', value: 'https://x.com/yourusername' },
     {
       icon: Youtube,
       label: 'YouTube',
